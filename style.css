@@ -1,0 +1,159 @@
+/* Style customizado para Odontologia Premium */
+
+/* Configurações de fonte e base */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-gold-light: #E3EDF5;
+    --color-gold: #6FA3C7;
+    --color-gold-dark: #4A7697;
+    --color-graphite: #152C5B;
+    --color-offwhite: #F4F0FA;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--color-offwhite);
+    color: var(--color-graphite);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Tipografia */
+.font-serif-lux {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Efeito de Gradiente de Ouro Metálico para Títulos */
+.text-gold-gradient {
+    background: linear-gradient(135deg, #E3EDF5 0%, #6FA3C7 50%, #4A7697 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Efeito de Gradiente Metálico para Botões */
+.bg-gold-gradient {
+    background: linear-gradient(135deg, #E3EDF5 0%, #6FA3C7 50%, #4A7697 100%);
+    background-size: 200% auto;
+    transition: all 0.5s ease;
+}
+
+.bg-gold-gradient:hover {
+    background-position: right center;
+    box-shadow: 0 10px 25px -5px rgba(111, 163, 199, 0.4);
+}
+
+/* Barra de Rolagem Elegante */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F4F0FA;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D4CDBC;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold);
+}
+
+/* Animações e Transições Personalizadas */
+.hover-gold-border {
+    position: relative;
+}
+
+.hover-gold-border::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-gold);
+    transition: width 0.4s ease;
+}
+
+.hover-gold-border:hover::after {
+    width: 100%;
+}
+
+/* Animação de Entrada de Elementos (Scroll Reveal) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeito Glow para CTAs */
+.btn-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: 0.75s;
+}
+
+.btn-glow:hover::before {
+    left: 150%;
+}
+
+/* Linha Divisória de Luxo */
+.luxury-divider {
+    height: 1px;
+    background: linear-gradient(to right, rgba(111,163,199,0) 0%, rgba(111,163,199,0.5) 50%, rgba(111,163,199,0) 100%);
+    width: 100%;
+}
+
+/* Controle de visibilidade de depoimentos no carrossel */
+.testimonial-slide {
+    display: none;
+    animation: fadeEffect 0.6s ease-in-out;
+}
+
+.testimonial-slide.active {
+    display: block;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Ajustes Finais de Zoom em Imagens dos Cards */
+.img-zoom {
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover .img-zoom {
+    transform: scale(1.05);
+}
+
+/* Modal Estilo Glassmorphism */
+.modal-backdrop {
+    background-color: rgba(26, 29, 26, 0.4);
+    backdrop-filter: blur(8px);
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
